@@ -11,12 +11,12 @@ This project aims to predict the monthly rental prices of properties using a var
   The dataset, `rentfaster.csv`, is loaded and cleaned by converting key variables to numeric types, extracting meaningful features, and handling missing values.
 
 - **Feature Engineering:**  
-  New features are created to enhance model performance:
-  - $$\text{price\_per\_sqft} = \\frac{price}{sq\_feet}$$
-  - $$\text{total\_rooms} = beds + baths$$
-  - $$\text{bath\_bed\_ratio} = \\frac{baths}{beds}$$ (with proper handling when beds = 0)
-  - A **pet friendly** indicator by combining pet policy features.
-  - **Distance to Calgary**, calculated using latitude and longitude.
+  We create several new features to enhance model performance:
+  - **Price per Square Foot:** Calculated as $$\\frac{price}{sq\\_feet}$$ to normalize property prices by their size.
+  - **Total Rooms:** The sum of bedrooms and bathrooms, computed as $$beds + baths$$.
+  - **Bath-to-Bed Ratio:** The ratio of bathrooms to bedrooms, defined as $$\\frac{baths}{beds}$$ (with appropriate handling when beds equals 0).
+  - **Pet Friendly Indicator:** A binary feature derived by combining the pet policies for cats and dogs.
+  - **Distance to Calgary:** Calculated using the latitude and longitude of the property, this feature quantifies the property's proximity to Calgary.
 
 - **Model Development and Evaluation:**  
   The following models are built and compared:
